@@ -30,6 +30,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     [SerializeField]
     float groundCheckRadius;
+
+    [SerializeField]
+    float fallGravityScale = 5f;
     void Start()
     {
         moveInput = inputAsset.FindAction("Move");
@@ -39,6 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, groundCheckRadius, groundLayerMask);
+        HandleGravityScale();
         AnimationStateController();
 
     }
@@ -115,9 +119,29 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
     }
+    void HandleGravityScale()
+    {
+        if (isGrounded)
+        {
+            rb.gravityScale = 1f; 
+        }
+        else
+        {
+            if (rb.linearVelocityY < 0) 
+            {
+                rb.gravityScale = fallGravityScale;
+            }
+            else 
+            {
+                rb.gravityScale = 1f;
+            }
+        }
+    }
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundPoint.position, groundCheckRadius);
     }
+
+
 }
