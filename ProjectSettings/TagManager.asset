@@ -41,20 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: clouds
+  - name: cloudsBackgroud
     uniqueID: 3337299685
     locked: 0
-  - name: mountains
+  - name: mountainsBackgroud
     uniqueID: 1690153997
     locked: 0
-  - name: trees
+  - name: treesBackgroud
     uniqueID: 1407019347
     locked: 0
-  - name: tiles
+  - name: Trees
+    uniqueID: 2751675509
+    locked: 0
+  - name: Foreground
     uniqueID: 3173682337
     locked: 0
   - name: Player
     uniqueID: 731831029
+    locked: 0
+  - name: Leaves
+    uniqueID: 3168433761
     locked: 0
   m_RenderingLayers:
   - Default
