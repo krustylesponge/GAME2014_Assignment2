@@ -41,7 +41,7 @@ public class Menu : MonoBehaviour
     }
     public void LoseScene()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1f;
     }
 
