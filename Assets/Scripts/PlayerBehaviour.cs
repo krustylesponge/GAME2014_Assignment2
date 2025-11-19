@@ -39,7 +39,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, groundCheckRadius, groundLayerMask);
-     //   AnimationStateController();
+        AnimationStateController();
 
     }
    
@@ -49,7 +49,7 @@ public class PlayerBehaviour : MonoBehaviour
         Jump();
 
     }
-/*    void AnimationStateController()
+    void AnimationStateController()
     {
         if (isGrounded)
         {
@@ -76,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         }
         animator.SetInteger("State", (int)state);
-    }*/
+    }
     void Move()
     {
 
