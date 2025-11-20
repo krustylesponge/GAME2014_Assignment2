@@ -27,21 +27,29 @@ public class Menu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        SoundManager.Instance.PlayMusic("MainMenu");
+        SoundManager.Instance.StopSFXLoop();
     }
 
     public void GameScene()
     {
         SceneManager.LoadScene(1);
+        SoundManager.Instance.PlayMusic("Lvl1");
+        SoundManager.Instance.PlaySFXLoop("Birds");
         Time.timeScale = 1f;
     }
     public void WinScene()
     {
         SceneManager.LoadScene(3);
+        SoundManager.Instance.PlayMusic("MainMenu");
+        SoundManager.Instance.StopSFXLoop();
         Time.timeScale = 1f;
     }
     public void LoseScene()
     {
         SceneManager.LoadScene(2);
+        SoundManager.Instance.PlayMusic("GameOver");
+        SoundManager.Instance.StopSFXLoop();
         Time.timeScale = 1f;
     }
 
